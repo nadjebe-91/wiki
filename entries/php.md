@@ -1,0 +1,2 @@
+# PHP
+PHP is an open-source, server-side scripting language designed specifically for web development and the creation of dynamic websites. The acronym stands for "PHP: Hypertext Preprocessor" (a recursive acronym). Integrated directly into the HTML code, it manages the complex logic of applications and databases.

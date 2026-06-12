@@ -1,0 +1,2 @@
+# GIT
+PHP (a recursive acronym for PHP: Hypertext Preprocessor) is an open-source scripting language primarily used to create dynamic websites and web applications. The code is executed server-side and generates standard [HTML](wiki/HTML) code, which is then displayed in the user's browser.

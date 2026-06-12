@@ -1,0 +1,2 @@
+# JavaScript
+JavaScript is an essential programming language used primarily for designing interactive websites and dynamic applications. It typically runs directly in the browser (client-side) or on servers via environments like Node.js.
