@@ -8,7 +8,7 @@
     <div>
         {{ content|safe }}
     </div>
-    <a href="{% url 'wiki:update_entry' title %}" class="btn btn-primary">Edit this content</a>
+    <a href="{% url 'wiki:update_entry' entry_name %}" class="btn btn-primary">Edit this content</a>
 {% endblock %}
 
     
