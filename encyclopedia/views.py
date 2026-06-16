@@ -45,11 +45,12 @@ def search_entry(request):
 
     if len(matching_entries)==1 and query == matching_entries[0].lower():
 
-        exact_entry_name = matching_entries[0]
-        return render(request, "encyclopedia/entry.html", {
-            "entry_name": exact_entry_name,
-            "content": markdowner.convert(util.get_entry(exact_entry_name))
-        })
+        exact_title = matching_entries[0]
+        return redirect('wiki:entry', title =exact_title)
+        #return render(request, "encyclopedia/entry.html", {
+            #"entry_name": title,
+            #"content": markdowner.convert(util.get_entry(title))
+        #})
     else:
         return render(request, 'encyclopedia/search.html', {
             "query": query,
