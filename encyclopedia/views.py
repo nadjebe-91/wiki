@@ -31,28 +31,30 @@ def search_entry(request):
     markdowner = Markdown()
     if request.method == "POST":
         query = request.POST.get('q','').strip().lower()
-        if query == "":
-            return render(request, "encyclopedia/search.html",{
-                "query":query,
-                "search_result":None
+    else:
+        query = request.POST.get('q','').strip().lower()
+    if not query:
+        return render(request, "encyclopedia/search.html",{
+            "query":query,
+            "search_result":None
     })
+
     saved_entries = util.list_entries()
 
     matching_entries = [x for x in saved_entries if query in x.lower()]
+
     if len(matching_entries)==1 and query == matching_entries[0].lower():
+
+        exact_entry_name = matching_entries[0]
         return render(request, "encyclopedia/entry.html", {
-            "entry_name": query,
-            "content": markdowner.convert(util.get_entry(query))
+            "entry_name": exact_entry_name,
+            "content": markdowner.convert(util.get_entry(exact_entry_name))
         })
     else:
         return render(request, 'encyclopedia/search.html', {
             "query": query,
             "search_results": matching_entries if matching_entries else None
         })
-    return render(request, "encyclopedia/error.html", {
-        "message": "Hmm, something went wrong."
-    })
-
 class NewEntryForm(forms.Form):
     title = forms.CharField(label="Title", 
                             min_length=1, 
